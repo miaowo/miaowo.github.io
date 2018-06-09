@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../css/mdui.min.css">
+  <link rel="stylesheet" href="../css/ionicons.min.css">
+   </style>
+  <title>服务状态 | 喵窝～</title>
+</head>
+<body class="mdui-theme-primary-teal">
+<div class="mdui-container-fluid">
+  <div class="mdui-row mdui-row-gapless">
+    <div class="mdui-col-md-6 mdui-col-offset-md-3">
+  <div class="mdui-appbar">
+    <div class="mdui-toolbar mdui-color-theme">
+	    <i class="mdui-icon ion-android-cloud-circle"></i>
+      <a class="mdui-typo-title">服务状态</a>
+      <div class="mdui-toolbar-spacer"></div>
+      <a href="https://www.miaowo.org" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '返回主站'}"><i class="mdui-icon material-icons">exit_to_app</i></a>
+      <a href="https://www.miaowo.org" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '在 GitHub 上查看'}"><i class="mdui-icon ion-social-github"></i></a>
+    </div>
+  </div>
+<div class="mdui-card mdui-m-t-1">
+  <div class="mdui-card">
+    <div class="mdui-card-content">
+
+
+<div class="mdui-table-fluid">
+  <table class="mdui-table">
+    <thead>
+      <tr>
+        <th>域名</th>
+        <th>服务器</th>
+        <th>服务</th>
+        <th>状态</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>www.miaowo.org</td>
+        <td>XiaoHei</td>
+        <td>主站</td>
+	<td><span id="www">加载中...</span></td>
+      </tr>
+      <tr>
+        <td>mail.miaowo.org</td>
+        <td>Meow</td>
+        <td>邮件登录页面</td>
+        <td><i id="mail" class="mdui-icon material-icons mdui-text-color-deep-orange">warning</i></td>
+      </tr>
+      <tr>
+        <td>irc.miaowo.org</td>
+        <td>Meow</td>
+        <td>IRC 聊天前端</td>
+        <td><i id="irc" class="mdui-icon material-icons mdui-text-color-red">error</i></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<div class="mdui-card mdui-m-t-1">
+  <div class="mdui-card">
+    <div class="mdui-card-content">
+
+
+<div class="mdui-table-fluid">
+       	<table class="mdui-table">
+    <tbody>
+      <tr>
+        <td><i class="mdui-icon material-icons mdui-text-color-green">refresh</i></td>
+        <td>这个页面将会自动刷新</td>
+      </tr>
+      <tr>
+        <td><i class="mdui-icon material-icons mdui-text-color-green">check_circle</i></td>
+        <td>没有检测到问题</td>
+      </tr>
+      <tr>
+        <td><i class="mdui-icon material-icons mdui-text-color-deep-orange">warning</i></td>
+        <td>计划中的维护</td>
+      </tr>
+      <tr>
+        <td><i class="mdui-icon material-icons mdui-text-color-red">error</i></td>
+      	<td>故障</td>
+      </tr>
+      <tr>
+        <td><i class="mdui-icon material-icons mdui-text-color-red">build</i></td>
+      	<td>修复中</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+      <div class="mdui-card-actions">
+        <a href="mailto:outage_report@miaowo.org" class="mdui-center mdui-btn mdui-color-teal-400 mdui-ripple mdui-text-color-white-text">报告问题</a>
+      </div>
+    </div>
+ </div>
+    </div>
+ </div>
+</div>
+</div>
+  </div>
+
+
+<script src="../js/mdui.min.js"></script>
+<script>
+
+var $$ = mdui.JQ; // Initialize MDUI JQuery
+		
+function updateStatus() {
+
+// Get status from uptimerobot API V2
+$$.ajax({
+    method: 'POST',
+    url: 'https://api.uptimerobot.com/v2/getMonitors',
+    data: {
+            api_key: 'm780147504-d9a2fc6cea3a6f828f4e6338', // Readonly API
+            format: 'json'
+	  },
+    success: function (data) {
+	   var json = JSON.parse(data);
+	   if (json.stat === "ok") {
+		 
+		 // If status is ok, display green check
+		$$('#www').replaceWith('<i id="www" class="mdui-icon material-icons mdui-text-color-green">check_circle</i>');
+	   	console.log("[OK]" + "[Main]" + Date())
+	   } else {
+
+		// Else, display red error
+		$$('#www').replaceWith('<i id="www" class="mdui-icon material-icons mdui-text-color-red">error</i>');
+	   
+	   }
+			
+    }
+});
+
+}
+
+updateStatus();
+setInterval(updateStatus, 180000); // Interval 3 mins
+</script>
+</body>
+</html>
