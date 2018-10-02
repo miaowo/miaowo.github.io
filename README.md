@@ -4,6 +4,8 @@
 
 相关链接
 
+* [编辑历史](https://github.com/miaowo/miaowo.github.io/commits/master)
+
 * [文档结构](https://github.com/Katzeilla/miaowo-docs/blob/master/INDEX.md)
 
 * [在主站的讨论](https://www.miaowo.org/topic/437/)
