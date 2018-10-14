@@ -1,0 +1,51 @@
+#status-icon-online {
+	padding-bottom: 3px;
+	font-size: 10px;
+	color: green;
+}
+
+#status-icon-left {
+	padding-bottom: 3px;
+	font-size: 10px;
+        color: #ff6d00;
+}
+
+#status-icon-hidden {
+	padding-bottom: 3px;
+	font-size: 10px;
+	color: grey;
+}
+
+#avatar {
+	border-radius: 5%;
+}
+
+#fix-ripple {
+	overflow: visible;
+}
+
+.unread-count {
+	text-align: right;
+}
+
+#text-nav {
+        margin-left: 18px;
+        margin-top: 5px;
+}
+
+#btn-change-status {
+	height: 20px;
+	font-size: 12px;
+	line-height: 20px;
+	margin-left: 12px;
+	margin-top: 3px;
+}
+
+#textarea-change-status {
+        margin-left: -45px;
+}
+
+#select-user-status {
+        padding: 0px;
+        width: 130px;
+}

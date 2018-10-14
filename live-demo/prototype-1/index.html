@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <title>喵窝</title>
+  <link rel="stylesheet" href="../css/miaowo-user.css">
+  <link rel="stylesheet" href="../css/mdui.min.css">
+  <link rel="stylesheet" href="../css/ionicons.min.css">
+</head>
+
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+<header class="mdui-appbar mdui-appbar-fixed">
+  <div class="mdui-toolbar mdui-color-theme">
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer', swipe: true}">
+	    <i class="mdui-icon material-icons">menu</i>
+    </span>
+    <a href="" class="mdui-typo-title">喵窝</a>
+        <div class="mdui-toolbar-spacer"></div>
+ <a class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '通知'}">
+	 <i class="mdui-icon material-icons">notifications</i>
+ </a>
+  </div>
+</header>
+
+<div class="mdui-drawer" id="main-drawer">
+  <div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
+	  <div class="user-container">
+           <div id="fix-ripple" class="mdui-ripple mdui-card-header">
+            <img class="mdui-card-header-avatar" id="avatar" src="../pics/user.jpg"/>
+            <div class="mdui-card-header-title">Katzeilla</div>
+	    <button mdui-menu="{target: '#select-user-status'}"  id="btn-change-status" class="mdui-btn mdui-btn-dense mdui-ripple">
+		    <div id=textarea-change-status>
+                    <a href="javascript:;" class="mdui-ripple">
+		    <i id="status-icon-online" class="mdui-icon material-icons">brightness_1</i> 
+			    在线
+			    </a>
+		    </div>
+	    </button>
+
+<ul class="mdui-menu mdui-menu-cascade" id="select-user-status">
+          <li class="mdui-menu-item">
+            <a href="javascript:;" class="mdui-ripple">
+	    <i id="status-icon-left" class="mdui-icon material-icons">brightness_1</i>
+	      离开
+            </a>
+          </li>
+          <li class="mdui-menu-item">
+            <a href="javascript:;" class="mdui-ripple">
+	    <i id="status-icon-hidden" class="mdui-icon material-icons">brightness_1</i>
+	      隐身
+            </a>
+          </li>
+</ul>
+
+	   </div> 
+	  </div>
+      <div class="mdui-list-item mdui-ripple">
+	      <i class="mdui-list-item-icon mdui-icon material-icons">notifications</i>
+	      <div class="mdui-list-item-content">通知</div>
+	      <div class="unread-count mdui-list-item-content">12</div>
+      </div>
+      <div class="mdui-list-item mdui-ripple">
+	      <i class="mdui-list-item-icon mdui-icon material-icons">inbox</i>
+	      <div class="mdui-list-item-content">收件箱</div>
+	      <div class="unread-count mdui-list-item-content">4</div>
+      </div>
+      <div class="mdui-list-item mdui-ripple">
+	      <i class="mdui-list-item-icon mdui-icon ion-android-chat"></i>
+	      <div class="mdui-list-item-content">聊天</div>
+	      <div class="unread-count mdui-list-item-content">5</div>
+      </div>
+
+      <div class="mdui-typo">
+      <h5 id="text-nav"><small>广场</small></h5>
+      </div>
+
+      <div class="mdui-list-item mdui-ripple">
+	      <i class="mdui-list-item-icon mdui-icon ion-help-circled"></i>
+	      <div class="mdui-list-item-content">提问</div>
+	      <div class="unread-count mdui-list-item-content">2</div>
+      </div>
+      <div class="mdui-list-item mdui-ripple">
+	      <i class="mdui-list-item-icon mdui-icon material-icons">widgets</i>
+	      <div class="mdui-list-item-content">综合</div>
+	      <div class="unread-count mdui-list-item-content">5</div>
+      </div>
+      <div class="mdui-list-item mdui-ripple">
+	      <i class="mdui-list-item-icon mdui-icon material-icons">work</i>
+	      <div class="mdui-list-item-content">办公室</div>
+	      <div class="unread-count mdui-list-item-content">3</div>
+      </div>
+      <div class="mdui-list-item mdui-ripple">
+	      <i class="mdui-list-item-icon mdui-icon ion-android-cloud-circle"></i>
+	      <div class="mdui-list-item-content">服务状态</div>
+      </div>
+      <div class="mdui-list-item mdui-ripple">
+	      <i class="mdui-list-item-icon mdui-icon ion-chatbox-working"></i>
+	      <div class="mdui-list-item-content">反馈</div>
+      </div>
+      
+      <div class="mdui-divider"></div>
+      
+      <div class="mdui-list-item mdui-ripple">
+	      <i class="mdui-list-item-icon mdui-icon ion-ios-gear"></i>
+	      <div class="mdui-list-item-content">设置</div>
+      </div>
+      <div class="mdui-list-item mdui-ripple">
+	      <i class="mdui-list-item-icon mdui-icon ion-android-exit"></i>
+	      <div class="mdui-list-item-content">退出登录</div>
+      </div>
+</div>
+</div>
+ 
+<script src="../js/highlight.min.js"></script>
+<script src="../js/mdui.min.js"></script>
+<script>
+var $$ = mdui.JQ;
+</script>
