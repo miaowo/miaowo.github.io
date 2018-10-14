@@ -20,10 +20,6 @@
 	border-radius: 5%;
 }
 
-#fix-ripple {
-	overflow: visible;
-}
-
 .unread-count {
 	text-align: right;
 }
@@ -34,11 +30,11 @@
 }
 
 #btn-change-status {
+	margin-top: -64px;
+	margin-left: 70px;
 	height: 20px;
 	font-size: 12px;
 	line-height: 20px;
-	margin-left: 12px;
-	margin-top: 3px;
 }
 
 #textarea-change-status {
